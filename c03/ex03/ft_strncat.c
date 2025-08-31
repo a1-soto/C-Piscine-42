@@ -11,30 +11,41 @@
 /* ************************************************************************** */
 #include <unistd.h>
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	dest_len;
 	unsigned int	i;
 
 	i = 0;
-	dest_len = strlen(dest); //error de declaracion de libreria!!
+	dest_len = ft_strlen(dest);
 	while (i < nb && src[i] != '\0')
 	{
 		dest[dest_len + i] = src[i];
-		dest[dest_len + i] = '\0';
+		i++;
 	}
-	return dest;
+	dest[dest_len + i] = '\0';
+	return (dest);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
     char dest[100] = "In code we trust.";
     char src[] = "Do we?";
-	unsigned int nb = 5,  
-  ft_strcat(dest, src, nb);
+	unsigned int nb = 4;  
+  ft_strncat(dest, src, nb);
 	printf("%s", dest);	
     return (0);
-}
-
-
+}*/
