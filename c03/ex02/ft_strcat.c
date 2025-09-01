@@ -6,7 +6,7 @@
 /*   By: angesoto <angesoto@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 19:35:49 by angesoto          #+#    #+#             */
-/*   Updated: 2025/08/31 13:12:07 by angesoto         ###   ########.fr       */
+/*   Updated: 2025/09/01 19:48:39 by angesoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -26,7 +26,7 @@ char	*ft_strcat(char *dest, char *src)
 		count_src++;
 	}
 	dest[count_dest + count_src] = '\0';
-	return (0);
+	return (dest);
 }
 /*
 #include <stdio.h>

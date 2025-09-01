@@ -6,7 +6,7 @@
 /*   By: angesoto <angesoto@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 12:06:25 by angesoto          #+#    #+#             */
-/*   Updated: 2025/09/01 17:13:17 by angesoto         ###   ########.fr       */
+/*   Updated: 2025/09/01 20:10:20 by angesoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_strlen(char *str)
@@ -28,11 +28,11 @@ unsigned	int	ft_strlcat(char *dest, char *src, unsigned int size)
 	unsigned int	i;
 
 	i = 0;
-	dest_len = ft_strlen(dest);
-	src_len = ft_strlen(src);
+	dest_len = ft_strlen(dest) + 1;
+	src_len = ft_strlen(src) + 1;
 	if (dest_len == size)
 		return (size + src_len);
-	while ((dest_len + i) < (size - 1) && src[i] != '\0')
+	while ((size - dest_len - 1 > 0) && src[i] != '\0')
 	{
 		dest[dest_len + i] = src[i];
 		i++;
@@ -49,6 +49,7 @@ int main ()
 	char src [] = "..spoken!";
 	unsigned int size = 9;
 	ft_strlcat(dest, src, size);
-	printf ("%u", ft_strlcat(dest, src, size));
+	printf ("El string %s retorna %u porque es la suma de %i y %i",
+ dest, ft_strlcat(dest, src, size), ft_strlen(src) + 1, ft_strlen(dest)+ 1);
 return (0);
 }*/
