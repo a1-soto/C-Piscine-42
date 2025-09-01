@@ -28,20 +28,21 @@ char	*ft_strstr(char *str, char *to_find)
 			while (to_find[j] != '\0' && str[i + j] == to_find[j])
 				j++;
 			if (to_find[j] == '\0')
-				return ((char *)srt + i);
+				return ((char *)str + i);
 		}
-	i++;
+		i++;
 	}
- 	return (0);
+	return (0);
 }
-
+/*
 #include <stdio.h>
 int main()
 {
     char str[100] = "In code we trust.Do we";
-    char to_find[] = "Do we?";
-
-  ft_strstr(str, to_find);
-	printf("%s", to_find);	
+    char to_find[] = "Do we";
+//	char *result;
+//	result = ft_strstr(str, to_find);
+  
+	printf("%s",ft_strstr(str, to_find));	
     return (0);
-}
+}*/
