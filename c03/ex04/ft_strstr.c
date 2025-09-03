@@ -6,7 +6,7 @@
 /*   By: angesoto <angesoto@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/31 11:48:04 by angesoto          #+#    #+#             */
-/*   Updated: 2025/09/01 20:18:14 by angesoto         ###   ########.fr       */
+/*   Updated: 2025/09/02 09:03:19 by angesoto         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -22,6 +22,7 @@ char	*ft_strstr(char *str, char *to_find)
 		return ((char *)str);
 	while (str[i] != '\0')
 	{
+		j = 0;
 		while (to_find[j] != '\0' && str[i + j] == to_find[j])
 			j++;
 		if (to_find[j] == '\0')
@@ -35,7 +36,7 @@ char	*ft_strstr(char *str, char *to_find)
 int main()
 {
     char str[100] = "In code we trust.Do we";
-    char to_find[] = "Do we";
+    char to_find[] = "Do we?";
 	printf("%s",ft_strstr(str, to_find));	
     return (0);
 }*/
